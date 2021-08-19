@@ -1,0 +1,46 @@
+{
+  "npmScope": "static-web-app",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {
+    "default": {
+      "runner": "@nrwl/nx-cloud",
+      "options": {
+        "cacheableOperations": [
+          "build",
+          "lint",
+          "test",
+          "e2e"
+        ],
+        "accessToken": "Njk1MDBmMjQtYzIxZi00ZTc0LTk3ZTItYjMxMTcxZDRmNjdhfHJlYWQtd3JpdGU="
+      }
+    }
+  },
+  "targetDependencies": {
+    "build": [
+      {
+        "target": "build",
+        "projects": "dependencies"
+      }
+    ]
+  },
+  "projects": {
+    "static-web-app": {
+      "tags": []
+    },
+    "static-web-app-e2e": {
+      "tags": [],
+      "implicitDependencies": [
+        "static-web-app"
+      ]
+    }
+  }
+}
